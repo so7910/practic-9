@@ -1,0 +1,52 @@
+using System;
+
+namespace practica_9
+{
+    public class Phone
+    {
+        private string brand;
+        private int batteryLevel;
+        public string Brand
+        {
+            get { return brand; }
+            set { brand = value; }
+        }
+        public int BatteryLevel
+        {
+            get { return batteryLevel; }
+            set
+            {
+                if (value >= 0 && value <= 100)
+                {
+                    batteryLevel = value;
+                }
+                else
+                {
+                    Console.WriteLine("Заряд должен быть от 0 до 100!");
+                }
+            }
+        }
+        public Phone(string brand, int batteryLevel)
+        {
+            Brand = brand;
+            BatteryLevel = batteryLevel;
+        }
+        public void UsePhone()
+        {
+            BatteryLevel -= 77;
+            if (BatteryLevel < 0)
+            {
+                BatteryLevel = 0;
+            }
+            Console.WriteLine($"Телефон {Brand}, заряд: {BatteryLevel}%.");
+        }
+        public static void Main(string[] args)
+        {
+            Phone myPhone = new Phone("Tecno", 71); 
+            myPhone.UsePhone();
+            myPhone.UsePhone();
+            myPhone.BatteryLevel = -77;
+            myPhone.UsePhone();
+        }
+    }
+}
