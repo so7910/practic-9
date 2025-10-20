@@ -1,0 +1,41 @@
+using System;
+
+namespace p4ela
+{
+    public class Circle
+    {
+        private double radius;
+        public double Radius
+        {
+            get { return radius; }
+            set
+            {
+                if (value > 0)
+                {
+                    radius = value;
+                }
+                else
+                {
+                    Console.WriteLine("Радиус должен быть больше 0!");
+                }
+            }
+        }
+        public Circle(double radius)
+        {
+            Radius = radius;
+        }
+        public void GetArea()
+        {
+            double area = Math.PI * Radius * Radius;
+            Console.WriteLine($"Площадь круга: {area}.");
+        }
+        public static void Main(string[] args)
+        {
+            Circle circle = new Circle(5);
+            circle.GetArea();
+            circle.Radius = -2;
+            circle.Radius = 1;
+            circle.GetArea();
+        }
+    }
+}
