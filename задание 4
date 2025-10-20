@@ -1,6 +1,6 @@
 using System;
 
-namespace p4ela
+namespace practic_9
 {
     public class Circle
     {
