@@ -1,5 +1,5 @@
 using System;
-namespace practica_9 {
+namespace practic_9 {
     public class Person
     {
     private string name; 
@@ -41,7 +41,7 @@ namespace practica_9 {
     public static void Main(string[] args)
     {
         
-        Person person1 = new Person("МАрк", 16);
+        Person person1 = new Person("Марк", 16);
         person1.SayHello();  
                              
         Person person2 = new Person("Марк", 178);
