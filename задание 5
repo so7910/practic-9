@@ -1,0 +1,58 @@
+using System;
+
+namespace practic_9
+{
+    using System;
+    class Pet
+    {
+        private string name;
+        private int energy;
+        public string Name
+        {
+            get => name;
+            set => name = value;
+        }
+        public int Energy
+        {
+            get => energy;
+            set
+            {
+                if (value < 0 || value > 100)
+                {
+                    Console.WriteLine("Энергия должна быть от 0 до 100!");
+                }
+                else
+                {
+                    energy = value;
+                }
+            }
+        }
+        public Pet(string name, int energy)
+        {
+            this.name = name;
+            Energy = energy; 
+        }
+        public void Play()
+        {
+            Energy = Math.Max(energy - 20, 0);
+            Console.WriteLine($"{name} играет, энергия: {energy}.");
+        }
+        public void Rest()
+        {
+            Energy = Math.Min(energy + 30, 100);
+            Console.WriteLine($"{name} отдыхает, энергия: {energy}.");
+        }
+    }
+    class Program
+    {
+        static void Main()
+        {
+            Pet tim = new Pet("бади", 71);
+            tim.Play();  
+            tim.Rest();  
+            tim.Energy = 150; 
+            tim.Play();  
+        }
+    }
+
+}
